@@ -20,3 +20,11 @@ public let kNAME = "name"
 public let kIMAGENAME = "imageName"
 public let kOBJECT = "objectID"
 
+//Item
+public let kCATEGORYID = "categoryID"
+public let kDESCRIPTION = "description"
+public let kPRICE = "price"
+public let kIMAGELINKS = "imageLinks"
+
+
+

@@ -20,6 +20,8 @@
 		FAF5987424A606E0009B45B9 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987324A606E0009B45B9 /* FirebaseCollectionReference.swift */; };
 		FAF5987924A60A07009B45B9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987824A60A07009B45B9 /* Category.swift */; };
 		FAF5987C24A60BA5009B45B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987B24A60BA5009B45B9 /* Constants.swift */; };
+		FAF5987E24A63C76009B45B9 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987D24A63C76009B45B9 /* ItemsTableViewController.swift */; };
+		FAF5988024A63DE4009B45B9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987F24A63DE4009B45B9 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		FAF5987324A606E0009B45B9 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		FAF5987824A60A07009B45B9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FAF5987B24A60BA5009B45B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FAF5987D24A63C76009B45B9 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		FAF5987F24A63DE4009B45B9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,8 @@
 			children = (
 				FADBC41324A5F4D00000C38A /* AppDelegate.swift */,
 				FADBC41524A5F4D00000C38A /* SceneDelegate.swift */,
-				FAF5987624A609D0009B45B9 /* Main Views */,
 				FADBC41924A5F4D00000C38A /* Main.storyboard */,
+				FAF5987624A609D0009B45B9 /* Main Views */,
 				FAF5987724A609DF009B45B9 /* Custom Cells */,
 				FAF5987A24A60A0E009B45B9 /* Model */,
 				FAF5987524A609C0009B45B9 /* Helpers */,
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF5986D24A602CD009B45B9 /* CategoryCollectionViewController.swift */,
+				FAF5987D24A63C76009B45B9 /* ItemsTableViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF5987824A60A07009B45B9 /* Category.swift */,
+				FAF5987F24A63DE4009B45B9 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,11 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF5988024A63DE4009B45B9 /* Item.swift in Sources */,
 				FAF5987424A606E0009B45B9 /* FirebaseCollectionReference.swift in Sources */,
 				FADBC41424A5F4D00000C38A /* AppDelegate.swift in Sources */,
 				FAF5987024A60380009B45B9 /* CategoryCollectionViewCell.swift in Sources */,
 				FADBC41624A5F4D00000C38A /* SceneDelegate.swift in Sources */,
 				FAF5986E24A602CD009B45B9 /* CategoryCollectionViewController.swift in Sources */,
+				FAF5987E24A63C76009B45B9 /* ItemsTableViewController.swift in Sources */,
 				FADBC41E24A5F4D10000C38A /* eMarkt.xcdatamodeld in Sources */,
 				FAF5987924A60A07009B45B9 /* Category.swift in Sources */,
 				FAF5987C24A60BA5009B45B9 /* Constants.swift in Sources */,

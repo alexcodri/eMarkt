@@ -14,6 +14,9 @@ class CategoryCollectionViewController: UICollectionViewController {
     //all downloaded categories will be stored in this array
     var categoriesArray: [Category] = []
     
+    private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
+    private let itemsPerRow: CGFloat = 3
+    
     //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +31,20 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return categoriesArray.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! CategoryCollectionViewCell
+        
+        cell.generateCell(categoriesArray[indexPath.row])
+        
+        return cell
+    }
+    
+    //MARK: UICollectionView Delegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "categoryToItemsSegue", sender: categoriesArray[indexPath.row])
     }
     
     //MARK: Download categories
@@ -43,5 +55,37 @@ class CategoryCollectionViewController: UICollectionViewController {
             //must be refreshed in order to present the new data
             self.collectionView.reloadData()
         }
+    }
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "categoryToItemsSegue" {
+            let vc = segue.destination as! ItemsTableViewController
+            vc.category = (sender as! Category)
+        }
+        
+    }
+}
+
+extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout{
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return sectionInsets.left
     }
 }
