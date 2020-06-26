@@ -22,6 +22,13 @@
 		FAF5987C24A60BA5009B45B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987B24A60BA5009B45B9 /* Constants.swift */; };
 		FAF5987E24A63C76009B45B9 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987D24A63C76009B45B9 /* ItemsTableViewController.swift */; };
 		FAF5988024A63DE4009B45B9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5987F24A63DE4009B45B9 /* Item.swift */; };
+		FAF5988224A6457D009B45B9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5988124A6457D009B45B9 /* AddItemViewController.swift */; };
+		FAF5988424A66721009B45B9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5988324A66721009B45B9 /* Reachability.swift */; };
+		FAF5988624A66862009B45B9 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5988524A66862009B45B9 /* Downloader.swift */; };
+		FAF5988A24A696C5009B45B9 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5988924A696C5009B45B9 /* ItemTableViewCell.swift */; };
+		FAF5988C24A6A92F009B45B9 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5988B24A6A92F009B45B9 /* HelperFunctions.swift */; };
+		FAF5988E24A6B0E0009B45B9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5988D24A6B0E0009B45B9 /* ItemViewController.swift */; };
+		FAF5989024A6B457009B45B9 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5988F24A6B457009B45B9 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +51,13 @@
 		FAF5987B24A60BA5009B45B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAF5987D24A63C76009B45B9 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		FAF5987F24A63DE4009B45B9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FAF5988124A6457D009B45B9 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		FAF5988324A66721009B45B9 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		FAF5988524A66862009B45B9 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		FAF5988924A696C5009B45B9 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		FAF5988B24A6A92F009B45B9 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		FAF5988D24A6B0E0009B45B9 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		FAF5988F24A6B457009B45B9 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +131,9 @@
 			children = (
 				FAF5987324A606E0009B45B9 /* FirebaseCollectionReference.swift */,
 				FAF5987B24A60BA5009B45B9 /* Constants.swift */,
+				FAF5988324A66721009B45B9 /* Reachability.swift */,
+				FAF5988524A66862009B45B9 /* Downloader.swift */,
+				FAF5988B24A6A92F009B45B9 /* HelperFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -126,6 +143,8 @@
 			children = (
 				FAF5986D24A602CD009B45B9 /* CategoryCollectionViewController.swift */,
 				FAF5987D24A63C76009B45B9 /* ItemsTableViewController.swift */,
+				FAF5988124A6457D009B45B9 /* AddItemViewController.swift */,
+				FAF5988D24A6B0E0009B45B9 /* ItemViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -134,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				FAF5986F24A60380009B45B9 /* CategoryCollectionViewCell.swift */,
+				FAF5988924A696C5009B45B9 /* ItemTableViewCell.swift */,
+				FAF5988F24A6B457009B45B9 /* ImageCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -263,16 +284,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF5989024A6B457009B45B9 /* ImageCollectionViewCell.swift in Sources */,
 				FAF5988024A63DE4009B45B9 /* Item.swift in Sources */,
+				FAF5988E24A6B0E0009B45B9 /* ItemViewController.swift in Sources */,
 				FAF5987424A606E0009B45B9 /* FirebaseCollectionReference.swift in Sources */,
+				FAF5988424A66721009B45B9 /* Reachability.swift in Sources */,
 				FADBC41424A5F4D00000C38A /* AppDelegate.swift in Sources */,
 				FAF5987024A60380009B45B9 /* CategoryCollectionViewCell.swift in Sources */,
+				FAF5988C24A6A92F009B45B9 /* HelperFunctions.swift in Sources */,
 				FADBC41624A5F4D00000C38A /* SceneDelegate.swift in Sources */,
 				FAF5986E24A602CD009B45B9 /* CategoryCollectionViewController.swift in Sources */,
 				FAF5987E24A63C76009B45B9 /* ItemsTableViewController.swift in Sources */,
+				FAF5988624A66862009B45B9 /* Downloader.swift in Sources */,
 				FADBC41E24A5F4D10000C38A /* eMarkt.xcdatamodeld in Sources */,
 				FAF5987924A60A07009B45B9 /* Category.swift in Sources */,
 				FAF5987C24A60BA5009B45B9 /* Constants.swift in Sources */,
+				FAF5988A24A696C5009B45B9 /* ItemTableViewCell.swift in Sources */,
+				FAF5988224A6457D009B45B9 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

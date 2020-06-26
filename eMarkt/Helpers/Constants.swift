@@ -8,6 +8,9 @@
 
 import Foundation
 
+//IDs and Keys
+public let kFILEREFERENCE = "gs://emarkt-8e647.appspot.com"
+
 //Firebase headers
 //firebase folders
 public let kUSER_PATH = "User"
