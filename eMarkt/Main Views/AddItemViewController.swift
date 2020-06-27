@@ -14,14 +14,14 @@ import NVActivityIndicatorView
 
 class AddItemViewController: UIViewController {
 
-    //MARK: IBOutlets
+    //MARK: - IBOutlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var cameraButton: UIButton!
     
     
-    //MARK: Variables
+    //MARK: - Variables
     
     var category: Category!
     var itemImages: [UIImage?] = []
@@ -30,7 +30,7 @@ class AddItemViewController: UIViewController {
     
     var activityIndicator: NVActivityIndicatorView?
     
-    //MARK: View lifecycle
+    //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -41,7 +41,7 @@ class AddItemViewController: UIViewController {
         activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballPulse, color: .green, padding: nil)
     }
     
-    //MARK: IBActions
+    //MARK: - IBActions
     
     @IBAction func doneBarButtonItemPressed(_ sender: Any) {
         dismissKeyboard()
@@ -65,7 +65,7 @@ class AddItemViewController: UIViewController {
         dismissKeyboard()
     }
     
-    //MARK: Helper functions
+    //MARK: - Helper functions
     
     private func dismissKeyboard(){
         self.view.endEditing(false)
@@ -81,7 +81,7 @@ class AddItemViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    //MARK: Save item to Firebase
+    //MARK: - Save item to Firebase
     private func saveToFirebase(){
         
         showLoadingIndicator()
@@ -107,7 +107,7 @@ class AddItemViewController: UIViewController {
         }
         
     }
-    //MARK: Activity Indicator
+    //MARK: - Activity Indicator
     private func showLoadingIndicator(){
         if activityIndicator != nil{
             self.view.addSubview(activityIndicator!)
@@ -121,7 +121,7 @@ class AddItemViewController: UIViewController {
         }
     }
     
-    //MARK: Show gallery
+    //MARK: - Show gallery
     private func showImageGallery(){
         self.gallery = GalleryController()
         self.gallery.delegate = self
@@ -133,7 +133,7 @@ class AddItemViewController: UIViewController {
     }
     
 }
-//MARK: Protocols
+//MARK: - Protocols
 extension AddItemViewController: GalleryControllerDelegate{
     
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {

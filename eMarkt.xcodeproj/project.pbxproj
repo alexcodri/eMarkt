@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		27066BEE4A20598B356D839F /* Pods_eMarkt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F4957980F6A9B45FADE531 /* Pods_eMarkt.framework */; };
+		FA5E21BD24A78AAC00055A9D /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21BC24A78AAC00055A9D /* Basket.swift */; };
+		FA5E21BF24A79EF900055A9D /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21BE24A79EF900055A9D /* BasketViewController.swift */; };
+		FA5E21C124A7CC7300055A9D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C024A7CC7300055A9D /* WelcomeViewController.swift */; };
+		FA5E21C324A7CEDA00055A9D /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C224A7CEDA00055A9D /* MUser.swift */; };
+		FA5E21C524A7EF5100055A9D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C424A7EF5100055A9D /* ProfileTableViewController.swift */; };
+		FA5E21C724A7F61A00055A9D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C624A7F61A00055A9D /* DetailsViewController.swift */; };
+		FA5E21CA24A8043E00055A9D /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C924A8043E00055A9D /* EditProfileViewController.swift */; };
 		FADBC41424A5F4D00000C38A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC41324A5F4D00000C38A /* AppDelegate.swift */; };
 		FADBC41624A5F4D00000C38A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC41524A5F4D00000C38A /* SceneDelegate.swift */; };
 		FADBC41B24A5F4D00000C38A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADBC41924A5F4D00000C38A /* Main.storyboard */; };
@@ -35,6 +42,13 @@
 		3F96A8BF17ED63806F309303 /* Pods-eMarkt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eMarkt.debug.xcconfig"; path = "Target Support Files/Pods-eMarkt/Pods-eMarkt.debug.xcconfig"; sourceTree = "<group>"; };
 		8DE8475DC468E70D43E637B0 /* Pods-eMarkt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eMarkt.release.xcconfig"; path = "Target Support Files/Pods-eMarkt/Pods-eMarkt.release.xcconfig"; sourceTree = "<group>"; };
 		99F4957980F6A9B45FADE531 /* Pods_eMarkt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eMarkt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5E21BC24A78AAC00055A9D /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		FA5E21BE24A79EF900055A9D /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		FA5E21C024A7CC7300055A9D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FA5E21C224A7CEDA00055A9D /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		FA5E21C424A7EF5100055A9D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		FA5E21C624A7F61A00055A9D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		FA5E21C924A8043E00055A9D /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		FADBC41024A5F4D00000C38A /* eMarkt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eMarkt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADBC41324A5F4D00000C38A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FADBC41524A5F4D00000C38A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +101,24 @@
 				8DE8475DC468E70D43E637B0 /* Pods-eMarkt.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA5E21C824A7F65800055A9D /* Login View Folder */ = {
+			isa = PBXGroup;
+			children = (
+				FA5E21C024A7CC7300055A9D /* WelcomeViewController.swift */,
+				FA5E21C624A7F61A00055A9D /* DetailsViewController.swift */,
+			);
+			path = "Login View Folder";
+			sourceTree = "<group>";
+		};
+		FA5E21CB24A8094700055A9D /* Profile View Folder */ = {
+			isa = PBXGroup;
+			children = (
+				FA5E21C424A7EF5100055A9D /* ProfileTableViewController.swift */,
+				FA5E21C924A8043E00055A9D /* EditProfileViewController.swift */,
+			);
+			path = "Profile View Folder";
 			sourceTree = "<group>";
 		};
 		FADBC40724A5F4D00000C38A = {
@@ -145,6 +177,9 @@
 				FAF5987D24A63C76009B45B9 /* ItemsTableViewController.swift */,
 				FAF5988124A6457D009B45B9 /* AddItemViewController.swift */,
 				FAF5988D24A6B0E0009B45B9 /* ItemViewController.swift */,
+				FA5E21BE24A79EF900055A9D /* BasketViewController.swift */,
+				FA5E21C824A7F65800055A9D /* Login View Folder */,
+				FA5E21CB24A8094700055A9D /* Profile View Folder */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -164,6 +199,8 @@
 			children = (
 				FAF5987824A60A07009B45B9 /* Category.swift */,
 				FAF5987F24A63DE4009B45B9 /* Item.swift */,
+				FA5E21BC24A78AAC00055A9D /* Basket.swift */,
+				FA5E21C224A7CEDA00055A9D /* MUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,10 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF5989024A6B457009B45B9 /* ImageCollectionViewCell.swift in Sources */,
+				FA5E21C724A7F61A00055A9D /* DetailsViewController.swift in Sources */,
+				FA5E21C124A7CC7300055A9D /* WelcomeViewController.swift in Sources */,
 				FAF5988024A63DE4009B45B9 /* Item.swift in Sources */,
 				FAF5988E24A6B0E0009B45B9 /* ItemViewController.swift in Sources */,
+				FA5E21C324A7CEDA00055A9D /* MUser.swift in Sources */,
 				FAF5987424A606E0009B45B9 /* FirebaseCollectionReference.swift in Sources */,
 				FAF5988424A66721009B45B9 /* Reachability.swift in Sources */,
+				FA5E21CA24A8043E00055A9D /* EditProfileViewController.swift in Sources */,
 				FADBC41424A5F4D00000C38A /* AppDelegate.swift in Sources */,
 				FAF5987024A60380009B45B9 /* CategoryCollectionViewCell.swift in Sources */,
 				FAF5988C24A6A92F009B45B9 /* HelperFunctions.swift in Sources */,
@@ -298,8 +339,11 @@
 				FAF5988624A66862009B45B9 /* Downloader.swift in Sources */,
 				FADBC41E24A5F4D10000C38A /* eMarkt.xcdatamodeld in Sources */,
 				FAF5987924A60A07009B45B9 /* Category.swift in Sources */,
+				FA5E21BF24A79EF900055A9D /* BasketViewController.swift in Sources */,
 				FAF5987C24A60BA5009B45B9 /* Constants.swift in Sources */,
+				FA5E21BD24A78AAC00055A9D /* Basket.swift in Sources */,
 				FAF5988A24A696C5009B45B9 /* ItemTableViewCell.swift in Sources */,
+				FA5E21C524A7EF5100055A9D /* ProfileTableViewController.swift in Sources */,
 				FAF5988224A6457D009B45B9 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

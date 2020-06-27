@@ -10,11 +10,11 @@ import UIKit
 
 class ItemsTableViewController: UITableViewController {
 
-    //MARK: Variables
+    //MARK: - Variables
     var category: Category?
     var itemArray: [Item] = []
     
-    //MARK: View lifecycle
+    //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +45,7 @@ class ItemsTableViewController: UITableViewController {
         return cell
     }
     
-    //MARK: Tableview delegate
+    //MARK: - Tableview delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

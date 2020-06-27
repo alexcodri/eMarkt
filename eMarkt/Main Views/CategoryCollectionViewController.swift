@@ -10,14 +10,14 @@ import UIKit
 
 class CategoryCollectionViewController: UICollectionViewController {
     
-    //MARK: Variables
+    //MARK: - Variables
     //all downloaded categories will be stored in this array
     var categoriesArray: [Category] = []
     
     private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
     private let itemsPerRow: CGFloat = 3
     
-    //MARK: View Lifecycle
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         //function was called once, populating Firebase with categories.
@@ -42,12 +42,12 @@ class CategoryCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    //MARK: UICollectionView Delegate
+    //MARK: - UICollectionView Delegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "categoryToItemsSegue", sender: categoriesArray[indexPath.row])
     }
     
-    //MARK: Download categories
+    //MARK: - Download categories
     private func loadCategories(){
         downloadCategoriesFromFirebase{ (allCategories) in
             self.categoriesArray = allCategories
@@ -57,7 +57,7 @@ class CategoryCollectionViewController: UICollectionViewController {
         }
     }
     
-    //MARK: Navigation
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "categoryToItemsSegue" {

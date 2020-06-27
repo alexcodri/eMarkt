@@ -29,5 +29,18 @@ public let kDESCRIPTION = "description"
 public let kPRICE = "price"
 public let kIMAGELINKS = "imageLinks"
 
+//Basket
+public let kOWNERID = "ownerID"
+public let kITEMIDS = "itemID"
+
+//User
+public let kEMAIL = "email"
+public let kFIRSTNAME = "firstName"
+public let kLASTNAME = "lastName"
+public let kFULLNAME = "fullName"
+public let kCURRENTUSER = "currentUser"
+public let kFULLADDRESS = "fullAddress"
+public let kONBOARD = "onboard"
+public let kPURCHASEDITEMIDS = "purchasedItemIDs"
 
 

@@ -29,7 +29,7 @@ class Category {
     }
 }
 
-//MARK: Download categories function from Firebase
+//MARK: - Download categories function from Firebase
 //once every category is downloaded and saved, the function will return
 //an array of Categories
 func downloadCategoriesFromFirebase(completion: @escaping (_ categoryArray: [Category])->Void){
@@ -53,7 +53,7 @@ func downloadCategoriesFromFirebase(completion: @escaping (_ categoryArray: [Cat
     }
 }
 
-//MARK: Save category functions to Firebase
+//MARK: - Save category functions to Firebase
 func saveCategoryToFirebase(_ category: Category){
     //unique id
     let id = UUID().uuidString
@@ -62,7 +62,7 @@ func saveCategoryToFirebase(_ category: Category){
     FirebaseReference(.Category).document(id).setData(categoryDictionaryFrom(category) as! [String : Any])
 }
 
-//MARK: Helpers
+//MARK: - Helpers
 func categoryDictionaryFrom(_ category: Category) -> NSDictionary{
     //this will create a dictionary and return all objects from the categories.
     return NSDictionary(objects: [category.id, category.name, category.imageName], forKeys: [kOBJECT as NSCopying, kNAME as NSCopying, kIMAGENAME as NSCopying])

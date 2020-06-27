@@ -10,7 +10,7 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
     
-    //MARK: IBOutlets
+    //MARK: - IBOutlets
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
