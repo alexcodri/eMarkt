@@ -97,11 +97,13 @@ class AddItemViewController: UIViewController {
             uploadImages(images: itemImages, itemId: item.id) { (imageLinkArray) in
                 item.imageLinks = imageLinkArray
                 saveItemsToFirebase(item)
+                saveItemToAlgolia(item: item)
                 self.hideLoadingIndicator()
                 self.dismissView()
             }
         } else {
             saveItemsToFirebase(item)
+            saveItemToAlgolia(item: item)
             self.hideLoadingIndicator()
             dismissView()
         }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import EmptyDataSet_Swift
 class PurchaseHistoryTableViewController: UITableViewController {
 
     //MARK: - Variables
@@ -20,6 +20,8 @@ class PurchaseHistoryTableViewController: UITableViewController {
         super.viewDidLoad()
         //EXPLANATION: - Getting rid of empty cells in table view
         tableView.tableFooterView = UIView()
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +66,16 @@ class PurchaseHistoryTableViewController: UITableViewController {
         self.navigationController?.pushViewController(itemVC, animated: true)
         
     }
-    
- 
-
 }
+
+extension PurchaseHistoryTableViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "There are no items to display!")
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "emptyData")
+    }
+}
+

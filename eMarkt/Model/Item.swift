@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import InstantSearchClient
 
 class Item {
     //MARK: - item properties
@@ -103,6 +104,45 @@ func downloadItemsFromFirebaseByItemID(withIDs: [String], completion: @escaping 
         }
     } else {
         completion(itemArray)
+    }
+}
+ 
+//MARK: - Algolia functions
+func saveItemToAlgolia(item: Item){
+    
+    let index = AlgoliaService.shared.index
+    
+    let itemToSave = itemDictionaryFrom(item) as! [String : Any]
+    
+    index.addObject(itemToSave, withID: item.id ,requestOptions: nil) { (content, error) in
+        if error != nil {
+            print("Error saving item to Algolia!: \(error!.localizedDescription)")
+        } else {
+            print("Added to Algolia!")
+        }
+    }
+}
+
+func searchAlgolia(searchString: String, completion: @escaping (_ itemArray: [String]) -> Void){
+    
+    let index = AlgoliaService.shared.index
+    var resultIDs: [String] = []
+    
+    let query = Query.init(query: searchString)
+    query.attributesToRetrieve = ["name", "description"]
+    index.search(query) { (content, error) in
+        
+        if error == nil {
+            let content = content!["hits"] as! [[String : Any]]
+            resultIDs = []
+            
+            for result in content {
+                resultIDs.append(result["objectID"] as! String)
+            }
+            completion(resultIDs)
+        } else {
+            print("Error algolia search!: \(error!.localizedDescription)")
+        }
     }
 }
 
