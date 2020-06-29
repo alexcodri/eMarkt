@@ -10,6 +10,9 @@ import Foundation
 
 //IDs and Keys
 public let kFILEREFERENCE = "gs://emarkt-8e647.appspot.com"
+public let kALGOLIA_APP_ID = "0NTWJ78YJX"
+public let kALGOLIA_SEARCH_KEY = "bd9e81ec06a052ecae21a66809dfdf2a"
+public let kALGOLIA_ADMIN_KEY = "c57d48961915e1b3a4d858be104bd1ed"
 
 //Firebase headers
 //firebase folders

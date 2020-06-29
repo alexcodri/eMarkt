@@ -37,7 +37,6 @@ class ProfileTableViewController: UITableViewController {
     }
     
     //MARK: - Tableview delegate
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -71,6 +70,7 @@ class ProfileTableViewController: UITableViewController {
                 finishRegistrationButton.setTitleColor(UIColor.red, for: .normal)
                 finishRegistrationButton.isEnabled = true
             }
+            purchaseHistoryButton.isEnabled = true
         } else {
             //EXPLANATION: - Disabling the buttons when the user is logged out
             finishRegistrationButton.setTitle("Logged out", for: .normal)
@@ -81,7 +81,7 @@ class ProfileTableViewController: UITableViewController {
     //MARK: - IBActions
     
     @objc func rightBarButtonItemPressed(){
-        if editButtonItem.title == "Login"{
+        if editButtonOutlet.title!.description == "Login"{
             //EXPLANATION: - show login view
             showLoginView()
         } else {
@@ -96,7 +96,8 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func goToEditUserProfile() {
-    
         performSegue(withIdentifier: "profileToEditSegue", sender: self)
     }
+    
+    
 }

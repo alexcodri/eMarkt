@@ -15,6 +15,9 @@
 		FA5E21C524A7EF5100055A9D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C424A7EF5100055A9D /* ProfileTableViewController.swift */; };
 		FA5E21C724A7F61A00055A9D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C624A7F61A00055A9D /* DetailsViewController.swift */; };
 		FA5E21CA24A8043E00055A9D /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E21C924A8043E00055A9D /* EditProfileViewController.swift */; };
+		FA6F358424A8CAB8008F7C0E /* PurchaseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F358324A8CAB8008F7C0E /* PurchaseHistoryTableViewController.swift */; };
+		FA6F358624AA05F6008F7C0E /* SeachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F358524AA05F6008F7C0E /* SeachViewController.swift */; };
+		FA6F358824AA1490008F7C0E /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F358724AA1490008F7C0E /* AlgoliaService.swift */; };
 		FADBC41424A5F4D00000C38A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC41324A5F4D00000C38A /* AppDelegate.swift */; };
 		FADBC41624A5F4D00000C38A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC41524A5F4D00000C38A /* SceneDelegate.swift */; };
 		FADBC41B24A5F4D00000C38A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADBC41924A5F4D00000C38A /* Main.storyboard */; };
@@ -49,6 +52,9 @@
 		FA5E21C424A7EF5100055A9D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		FA5E21C624A7F61A00055A9D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FA5E21C924A8043E00055A9D /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		FA6F358324A8CAB8008F7C0E /* PurchaseHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewController.swift; sourceTree = "<group>"; };
+		FA6F358524AA05F6008F7C0E /* SeachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachViewController.swift; sourceTree = "<group>"; };
+		FA6F358724AA1490008F7C0E /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
 		FADBC41024A5F4D00000C38A /* eMarkt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eMarkt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADBC41324A5F4D00000C38A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FADBC41524A5F4D00000C38A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +184,8 @@
 				FAF5988124A6457D009B45B9 /* AddItemViewController.swift */,
 				FAF5988D24A6B0E0009B45B9 /* ItemViewController.swift */,
 				FA5E21BE24A79EF900055A9D /* BasketViewController.swift */,
+				FA6F358324A8CAB8008F7C0E /* PurchaseHistoryTableViewController.swift */,
+				FA6F358524AA05F6008F7C0E /* SeachViewController.swift */,
 				FA5E21C824A7F65800055A9D /* Login View Folder */,
 				FA5E21CB24A8094700055A9D /* Profile View Folder */,
 			);
@@ -201,6 +209,7 @@
 				FAF5987F24A63DE4009B45B9 /* Item.swift */,
 				FA5E21BC24A78AAC00055A9D /* Basket.swift */,
 				FA5E21C224A7CEDA00055A9D /* MUser.swift */,
+				FA6F358724AA1490008F7C0E /* AlgoliaService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,13 +335,16 @@
 				FA5E21C124A7CC7300055A9D /* WelcomeViewController.swift in Sources */,
 				FAF5988024A63DE4009B45B9 /* Item.swift in Sources */,
 				FAF5988E24A6B0E0009B45B9 /* ItemViewController.swift in Sources */,
+				FA6F358824AA1490008F7C0E /* AlgoliaService.swift in Sources */,
 				FA5E21C324A7CEDA00055A9D /* MUser.swift in Sources */,
 				FAF5987424A606E0009B45B9 /* FirebaseCollectionReference.swift in Sources */,
 				FAF5988424A66721009B45B9 /* Reachability.swift in Sources */,
+				FA6F358424A8CAB8008F7C0E /* PurchaseHistoryTableViewController.swift in Sources */,
 				FA5E21CA24A8043E00055A9D /* EditProfileViewController.swift in Sources */,
 				FADBC41424A5F4D00000C38A /* AppDelegate.swift in Sources */,
 				FAF5987024A60380009B45B9 /* CategoryCollectionViewCell.swift in Sources */,
 				FAF5988C24A6A92F009B45B9 /* HelperFunctions.swift in Sources */,
+				FA6F358624AA05F6008F7C0E /* SeachViewController.swift in Sources */,
 				FADBC41624A5F4D00000C38A /* SceneDelegate.swift in Sources */,
 				FAF5986E24A602CD009B45B9 /* CategoryCollectionViewController.swift in Sources */,
 				FAF5987E24A63C76009B45B9 /* ItemsTableViewController.swift in Sources */,

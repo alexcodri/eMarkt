@@ -71,19 +71,24 @@ class ItemViewController: UIViewController {
     
     @objc func addToCartAction(){
         
-        //TODO: Check if user is logged in or show login view
-        
-//        downloadBasketFromFirebase("123") { (basket) in
-//            if basket == nil {
-//                self.createNewBasket()
-//            } else {
-//                //appending another item to the existing basket
-//                basket!.itemIDs.append(self.item.id)
-//                //updating the itemIDs exsiting in Firebase for the existing basket
-//                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIDs])
-//            }
-//        }
-        showLoginView()
+        //EXPLANATION: - If the user is logged in, then the application
+        //EXPLANATION: - will add the item in the basket
+        if MUser.currentUser() != nil {
+            downloadBasketFromFirebase(MUser.currentID()) { (basket) in
+                if basket == nil {
+                    self.createNewBasket()
+                } else {
+                    //appending another item to the existing basket
+                    basket!.itemIDs.append(self.item.id)
+                    //updating the itemIDs exsiting in Firebase for the existing basket
+                    self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIDs])
+                }
+            }
+        } else {
+            //EXPLANATION: - else if the user is not logged in
+            //EXPLANATION: - the login view will be presented
+            showLoginView()
+        }
     }
     
     //MARK: - Add to basket
@@ -92,8 +97,7 @@ class ItemViewController: UIViewController {
         //else a basket is created
         let newBasket = Basket()
         newBasket.id = UUID().uuidString
-        //TODO: modify current ownerID
-        newBasket.ownerID = "1234"
+        newBasket.ownerID = MUser.currentID()
         newBasket.itemIDs = [self.item.id]
         saveBasketToFirebase(newBasket)
         initJGProgressHUD(withText: "Added to basket!",typeOfIndicator: JGProgressHUDSuccessIndicatorView() ,delay: 2.0)
@@ -129,8 +133,6 @@ class ItemViewController: UIViewController {
         self.hud.show(in: self.view)
         self.hud.dismiss(afterDelay: delay)
     }
-    
-
 }
 
 

@@ -30,22 +30,38 @@ class BasketViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchBasketFromFirebase()
-        //TODO: - check if user is logged in
+        if MUser.currentUser() != nil {
+            fetchBasketFromFirebase()
+        } else {
+            //EXPLANATION: - if there is no current user then there is no basket
+            //EXPLANATION: - so the labels will be 0
+            self.updateTotalLabel(true)
+        }
     }
     
     //MARK: - IBActions
     @IBAction func checkoutButtonPressed(_ sender: Any) {
+        //EXPLANATION: - checking is the user has all the information completed
+        //EXPLANATION: - in order to allow them to checkout
+        if MUser.currentUser()!.onBoard {
+            
+             //EXPLANATION: - proceed with checkout
+            //TODO: Edit tempFunc
+            tempFunc()
+            addItemsToPurchaseHistory(itemIDs: self.purchasedItemsIDs)
+            emptyBasket()
+        } else {
+            initJGProgressHUD(withText: "Please complete your profile!", typeOfIndicator: JGProgressHUDErrorIndicatorView(), delay: 2.0)
+        }
     }
     
     //MARK: - Download basket functions
     private func fetchBasketFromFirebase(){
-        downloadBasketFromFirebase("123") { (basket) in
+        downloadBasketFromFirebase(MUser.currentID()) { (basket) in
             self.basket = basket
             self.getBasketItems()
         }
     }
-    
     private func getBasketItems(){
         if basket != nil{
             downloadItemsFromFirebaseByItemID(withIDs: basket!.itemIDs) { (allItems) in
@@ -82,8 +98,38 @@ class BasketViewController: UIViewController {
             checkoutButtonStatusUpdate()
         }
     }
-    //TODO: update button status
+
+    private func emptyBasket() {
+        purchasedItemsIDs.removeAll()
+        allItems.removeAll()
+        tableView.reloadData()
+        
+        basket!.itemIDs = []
+        updateBasketInFirebase(basket!, withValues: [kITEMIDS : basket!.itemIDs]) { (error) in
+            
+            if error != nil {
+                print("Error updating basket: \(error!.localizedDescription)")
+            }
+            self.getBasketItems()
+        }
+    }
     
+    private func addItemsToPurchaseHistory(itemIDs: [String]){
+        if MUser.currentUser() != nil {
+            let newItemsIDs = MUser.currentUser()!.purchasedItemIDs + itemIDs
+            updateCurrentUserInFirebase(withValues: [kPURCHASEDITEMIDS : newItemsIDs]) { (error) in
+                if error != nil {
+                    print("There was an error adding purchased items: \(error!.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    private func tempFunc(){
+        for item in allItems {
+            purchasedItemsIDs.append(item.id)
+        }
+    }
     //MARK: - Navigation
     private func showItemView(withItem: Item){
         
@@ -171,6 +217,13 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource{
         showItemView(withItem: allItems[indexPath.row])
     }
     
-    
+    //MARK: - JGProgress HUD creator
+    private func initJGProgressHUD(withText: String?,typeOfIndicator: JGProgressHUDImageIndicatorView, delay: Double){
+        //creating a JGProgressHUD
+        self.hud.textLabel.text = withText
+        self.hud.indicatorView = typeOfIndicator
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: delay)
+    }
     
 }
