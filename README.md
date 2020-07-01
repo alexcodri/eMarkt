@@ -21,20 +21,20 @@
   
   ## Custom cells
   Each item inside a TableViewController is custom, containing a photo, the title, price and description.
-  ![Simulator Screen Shot - iPhone 11 Pro Max - 2020-07-01 at 14 57 44](https://user-images.githubusercontent.com/55602310/86241315-623a2180-bbab-11ea-81f4-7dcdafe0fe02.png)
-  
+  <img src="https://user-images.githubusercontent.com/55602310/86241315-623a2180-bbab-11ea-81f4-7dcdafe0fe02.png" width="400" height="790">
+ 
   ## Search view
   The search view is animated, as when the user clicks the search icon, the text field and the button presents themselves to the user. Also, on clicking the search button, the keyboard dismisses itself.
   
   ## Basket view
   The basket view presents the user the items that were added to cart and each cell that contains the item. The basket view also presents a summary containing the number of total items and total price. The checkout button, for now, empties the basket and adds all the selected items to the purchase history.
-  ![Simulator Screen Shot - iPhone 11 Pro Max - 2020-07-01 at 14 58 11](https://user-images.githubusercontent.com/55602310/86241367-741bc480-bbab-11ea-98d2-4dfa5f9d80c2.png =250x250)
-
+ <img src="https://user-images.githubusercontent.com/55602310/86241367-741bc480-bbab-11ea-98d2-4dfa5f9d80c2.png" width="400" height="790">
   
   ## Profile view
   The profile view presents different options, according to the status of the user: 
-    if the user is not logged in, the state will be presented and the login button will be shown on the top right corner;
+    if the user is not logged in, the state will be presented and the login button will be shown on the top right corner;  
     if the user is logged in and the registration is not complete, as the user did not enter its credentials and his address, the state will be presented as 'Finish registration';  
-      ![Simulator Screen Shot - iPhone 11 Pro Max - 2020-07-01 at 14 58 38](https://user-images.githubusercontent.com/55602310/86241427-885fc180-bbab-11ea-9e3f-597bfd343d06.png =250x250) 
-    if the user is logged in and the registration is complete, the state will be presented as 'Registration complete';
+     <img src="https://user-images.githubusercontent.com/55602310/86241427-885fc180-bbab-11ea-9e3f-597bfd343d06.png" width="400" height="790">  
+    if the user is logged in and the registration is complete, the state will be presented as 'Registration complete';  
+    
   
